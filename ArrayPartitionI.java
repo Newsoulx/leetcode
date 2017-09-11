@@ -11,6 +11,23 @@
  *All the integers in the array will be in the range of [-10000, 10000].
  */
 class Solution {
+    /**
+     *排序不需要重写，有现成的快排算法工具类，对应结果和不需要排序取值，只需要取[0, 2, 4, 6, .....]
+     */
+    public int arrayPairSum(int[] nums) {
+        //nums = sortAsc(nums);
+        Arrays.sort(nums);
+        int size = nums.length;
+        int result = 0;
+        for (int i = 0; i < size; i = i + 2) {
+            result += nums[i];
+        }
+        return result;
+    }
+    
+    /**
+     * 效率低
+     */
     public int arrayPairSum(int[] nums) {
         nums = sortAsc(nums);
         int size = nums.length;
