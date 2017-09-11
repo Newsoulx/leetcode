@@ -20,4 +20,21 @@ class Solution {
             }
         return result;
     }
+    
+    /**
+     * better method
+     */
+    public int[] twoSum(int[] nums, int target) {
+        int size = nums.length;
+        int[] result = new int[2];
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < size; i++) {
+            if (map.containsKey(target - nums[i])) {
+                result = new int[] {map.get(target - nums[i]), i};
+                return result;
+            }
+            map.put(nums[i], i);
+        }
+        return result;
+    }
 }
